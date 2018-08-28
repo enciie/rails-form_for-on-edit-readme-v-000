@@ -1035,3 +1035,20 @@ Processing by PostsController#edit as HTML
   [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
   Rendered posts/edit.html.erb within layouts/application (1.5ms)
 Completed 200 OK in 20ms (Views: 14.5ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/posts/1" for 104.186.142.120 at 2018-08-28 06:45:44 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zRv+t208lzLpFHphu21QO57XlgN8tkCnv+/PzkMvuXzhqsYC79tCjvzVcYBol+U72If1sE5ufM3Gx7SrYEfo4w==", "post"=>{"title"=>"post 1", "description"=>"randome desc"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "post 1"], ["description", "randome desc"], ["updated_at", "2018-08-28 06:45:44.520302"], ["id", 1]]
+  [1m[35m (39.5ms)[0m  commit transaction
+Redirected to http://165.227.31.156:56052/posts/1
+Completed 302 Found in 47ms (ActiveRecord: 40.1ms)
+
+
+Started GET "/posts/1" for 104.186.142.120 at 2018-08-28 06:45:44 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
