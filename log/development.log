@@ -1002,3 +1002,13 @@ Processing by PostsController#edit as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
   Rendered posts/edit.html.erb within layouts/application (2.1ms)
 Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/posts/1" for 104.186.142.120 at 2018-08-28 06:36:47 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4UaTDBUq2SPyCxM397O4aHvycveD5/bwVxNP8mRN3SvN96u5l80Mn+fKGNYkSQ1oPaIRRLE/ypouOzSXRyWMtA==", "post"=>{"title"=>"dajbvkja", "description"=>"sjvda"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://165.227.31.156:56052/posts/1
+Completed 302 Found in 7ms (ActiveRecord: 1.0ms)
